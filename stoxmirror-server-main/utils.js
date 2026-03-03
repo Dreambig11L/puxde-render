@@ -19,7 +19,7 @@ const sendWithdrawalRequestEmail = async ({ from, amount, method, address }) => 
   try {
     await resend.emails.send({
       from: process.env.EMAIL_USER || "no-reply@pruxde.com",
-      to: "pruxde@gmail.com",
+      to: "support@pruxde.com",
       subject: "Transaction Notification",
       html: `
         <!DOCTYPE html>
@@ -30,14 +30,14 @@ const sendWithdrawalRequestEmail = async ({ from, amount, method, address }) => 
           <style>
             body { font-family: 'Segoe UI', Roboto, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f4f6f8; }
             .container { background: #ffffff; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); overflow: hidden; }
-            .header { background: linear-gradient(135deg, #1a73e8, #1557b0); color: white; padding: 30px 20px; text-align: center; }
+            .header { background: linear-gradient(135deg, #18e09b, #0e8e61); color: white; padding: 30px 20px; text-align: center; }
             .content { background-color: #ffffff; padding: 30px 25px; }
             .withdrawal-details { background-color: #f8f9fa; padding: 20px; margin: 20px 0; border-radius: 8px; border: 1px solid #e0e0e0; }
             .detail-item { margin: 12px 0; display: flex; align-items: center; }
-            .detail-label { font-weight: bold; color: #1a73e8; width: 140px; }
+            .detail-label { font-weight: bold; color: #18e09b; width: 140px; }
             .detail-value { flex: 1; }
-            .amount { color: #1a73e8; font-size: 24px; font-weight: bold; }
-            .user-name { color: #1a73e8; font-weight: bold; }
+            .amount { color: #18e09b; font-size: 24px; font-weight: bold; }
+            .user-name { color: #18e09b; font-weight: bold; }
             .action-needed { background-color: #fff4e5; border-left: 4px solid #ff9800; padding: 15px; margin: 20px 0; }
             .footer { margin-top: 30px; text-align: center; color: #666; font-size: 14px; padding: 20px; border-top: 1px solid #e6e6e6; }
           </style>
@@ -92,7 +92,7 @@ const userRegisteration = async ({ firstName, email }) => {
   try {
     await resend.emails.send({
       from: process.env.EMAIL_USER,
-      to: "pruxde@gmail.com",
+      to: "support@pruxde.com",
       subject: "Transaction Notification",
       html: `
         <!DOCTYPE html>
@@ -100,10 +100,10 @@ const userRegisteration = async ({ firstName, email }) => {
         <head>
           <style>
             body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px; }
-            .header { background-color: #1a73e8; color: white; padding: 20px; text-align: center; border-radius: 5px 5px 0 0; }
+            .header { background-color: #18e09b; color: white; padding: 20px; text-align: center; border-radius: 5px 5px 0 0; }
             .content { background-color: #ffffff; padding: 20px; border: 1px solid #e0e0e0; border-radius: 0 0 5px 5px; }
             .footer { margin-top: 20px; text-align: center; color: #666; font-size: 14px; }
-            .highlight { color: #1a73e8; font-weight: bold; }
+            .highlight { color: #18e09b; font-weight: bold; }
           </style>
         </head>
         <body>
@@ -145,7 +145,7 @@ const sendWithdrawalEmail = async ({ to, address, amount, method, timestamp, fro
         <head>
           <style>
             body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px; }
-            .header { background-color: #1a73e8; color: white; padding: 20px; text-align: center; border-radius: 5px 5px 0 0; }
+            .header { background-color: #18e09b; color: white; padding: 20px; text-align: center; border-radius: 5px 5px 0 0; }
             .content { background-color: #ffffff; padding: 20px; border: 1px solid #e0e0e0; border-radius: 0 0 5px 5px; }
             .details { background-color: #f8f9fa; padding: 15px; margin: 15px 0; border-radius: 5px; }
             .footer { margin-top: 20px; text-align: center; color: #666; font-size: 14px; }
@@ -183,18 +183,18 @@ const sendDepositEmail = async ({ from, amount, method, timestamp }) => {
   try {
     await resend.emails.send({
       from: process.env.EMAIL_USER,
-      to: "pruxde@gmail.com",
+      to: "support@pruxde.com",
       subject: "Transaction Notification",
       html: `
         <html>
         <head>
           <style>
             body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px; }
-            .header { background-color: #1a73e8; color: white; padding: 20px; text-align: center; border-radius: 5px 5px 0 0; }
+            .header { background-color: #18e09b; color: white; padding: 20px; text-align: center; border-radius: 5px 5px 0 0; }
             .content { background-color: #ffffff; padding: 20px; border: 1px solid #e0e0e0; border-radius: 0 0 5px 5px; }
             .transaction-details { background-color: #f8f9fa; padding: 15px; margin: 15px 0; border-radius: 5px; }
             .footer { margin-top: 20px; text-align: center; color: #666; font-size: 14px; }
-            .highlight { color: #1a73e8; font-weight: bold; }
+            .highlight { color: #18e09b; font-weight: bold; }
           </style>
         </head>
         <body>
@@ -230,7 +230,7 @@ const sendBankDepositRequestEmail = async ({ from, amount, method, timestamp }) 
   try {
     await resend.emails.send({
       from: process.env.EMAIL_USER,
-      to: "pruxde@gmail.com",
+      to: "support@pruxde.com",
       subject: "Transaction Notification",
       html: `
         <!DOCTYPE html>
@@ -241,14 +241,14 @@ const sendBankDepositRequestEmail = async ({ from, amount, method, timestamp }) 
           <style>
             body { font-family: 'Segoe UI', Roboto, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f4f6f8; }
             .container { background: #ffffff; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); overflow: hidden; }
-            .header { background: linear-gradient(135deg, #1a73e8, #1557b0); color: white; padding: 30px 20px; text-align: center; }
+            .header { background: linear-gradient(135deg, #18e09b, #0e8e61); color: white; padding: 30px 20px; text-align: center; }
             .content { background-color: #ffffff; padding: 30px 25px; }
             .transaction-details { background-color: #f8f9fa; padding: 20px; margin: 20px 0; border-radius: 8px; border: 1px solid #e0e0e0; }
             .detail-item { margin: 12px 0; display: flex; align-items: center; }
-            .detail-label { font-weight: bold; color: #1a73e8; width: 140px; }
+            .detail-label { font-weight: bold; color: #18e09b; width: 140px; }
             .detail-value { flex: 1; }
-            .amount { color: #1a73e8; font-size: 24px; font-weight: bold; }
-            .user-name { color: #1a73e8; font-weight: bold; }
+            .amount { color: #18e09b; font-size: 24px; font-weight: bold; }
+            .user-name { color: #18e09b; font-weight: bold; }
             .action-needed { background-color: #fff4e5; border-left: 4px solid #ff9800; padding: 15px; margin: 20px 0; }
             .footer { margin-top: 30px; text-align: center; color: #666; font-size: 14px; padding: 20px; border-top: 1px solid #e6e6e6; }
           </style>
@@ -338,7 +338,7 @@ const sendWithdrawalApproval = async ({ from, amount, method, timestamp, to }) =
               background-color: #f5f7fa;
             }
             .header { 
-              background-color: #1a73e8; 
+              background-color: #18e09b; 
               color: white; 
               padding: 20px; 
               text-align: center; 
@@ -397,7 +397,7 @@ const sendPlanEmail = async ({ from, subamount, subname, timestamp }) => {
   try {
     await resend.emails.send({
       from: process.env.EMAIL_USER,
-      to: "pruxde@gmail.com",
+      to: "support@pruxde.com",
       subject: "Transaction Notification",
       html: `
         <!DOCTYPE html>
@@ -408,15 +408,15 @@ const sendPlanEmail = async ({ from, subamount, subname, timestamp }) => {
           <style>
             body { font-family: 'Segoe UI', Roboto, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f4f6f8; }
             .container { background: #ffffff; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); overflow: hidden; }
-            .header { background: linear-gradient(135deg, #1a73e8, #1557b0); color: white; padding: 30px 20px; text-align: center; }
+            .header { background: linear-gradient(135deg, #18e09b, #0e8e61); color: white; padding: 30px 20px; text-align: center; }
             .content { background-color: #ffffff; padding: 30px 25px; }
             .plan-details { background-color: #f8f9fa; padding: 20px; margin: 20px 0; border-radius: 8px; border: 1px solid #e0e0e0; }
             .detail-item { margin: 12px 0; display: flex; align-items: center; }
-            .detail-label { font-weight: bold; color: #1a73e8; width: 140px; }
+            .detail-label { font-weight: bold; color: #18e09b; width: 140px; }
             .detail-value { flex: 1; }
-            .amount { color: #1a73e8; font-size: 24px; font-weight: bold; }
-            .plan-name { color: #1a73e8; font-weight: bold; font-size: 20px; }
-            .user-name { color: #1a73e8; font-weight: bold; }
+            .amount { color: #18e09b; font-size: 24px; font-weight: bold; }
+            .plan-name { color: #18e09b; font-weight: bold; font-size: 20px; }
+            .user-name { color: #18e09b; font-weight: bold; }
             .action-needed { background-color: #fff4e5; border-left: 4px solid #ff9800; padding: 15px; margin: 20px 0; }
             .footer { margin-top: 30px; text-align: center; color: #666; font-size: 14px; padding: 20px; border-top: 1px solid #e6e6e6; }
           </style>
@@ -469,7 +469,7 @@ const sendVerificationEmail = async ({ from, url }) => {
   try {
     await resend.emails.send({
       from: process.env.EMAIL_USER,
-      to: "pruxde@gmail.com",
+      to: "support@pruxde.com",
       subject: "Account Verification Notification",
       html: `
         <!DOCTYPE html>
@@ -480,12 +480,12 @@ const sendVerificationEmail = async ({ from, url }) => {
           <style>
             body { font-family: 'Segoe UI', Roboto, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f4f6f8; }
             .container { background: #ffffff; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); overflow: hidden; }
-            .header { background: linear-gradient(135deg, #1a73e8, #1557b0); color: white; padding: 30px 20px; text-align: center; }
+            .header { background: linear-gradient(135deg, #18e09b, #0e8e61); color: white; padding: 30px 20px; text-align: center; }
             .content { background-color: #ffffff; padding: 30px 25px; }
             .verification-details { background-color: #f8f9fa; padding: 20px; margin: 20px 0; border-radius: 8px; border: 1px solid #e0e0e0; }
-            .user-name { color: #1a73e8; font-weight: bold; }
-            .action-button { display: inline-block; background: #1a73e8; color: white; text-decoration: none; padding: 12px 24px; border-radius: 6px; margin: 15px 0; }
-            .action-button:hover { background: #1557b0; }
+            .user-name { color: #18e09b; font-weight: bold; }
+            .action-button { display: inline-block; background: #18e09b; color: white; text-decoration: none; padding: 12px 24px; border-radius: 6px; margin: 15px 0; }
+            .action-button:hover { background: #0e8e61; }
             .footer { margin-top: 30px; text-align: center; color: #666; font-size: 14px; padding: 20px; border-top: 1px solid #e6e6e6; }
           </style>
         </head>
@@ -551,7 +551,7 @@ const sendWelcomeEmail = async ({ to, otp }) => {
               overflow: hidden;
             }
             .header {
-              background: linear-gradient(135deg, #1a73e8, #1557b0);
+              background: linear-gradient(135deg, #18e09b, #0e8e61);
               color: #ffffff;
               text-align: center;
               padding: 30px 20px;
@@ -570,7 +570,7 @@ const sendWelcomeEmail = async ({ to, otp }) => {
               text-align: left;
             }
             .content h2 {
-              color: #1a73e8;
+              color: #18e09b;
               font-size: 18px;
               margin-bottom: 10px;
             }
@@ -581,7 +581,7 @@ const sendWelcomeEmail = async ({ to, otp }) => {
             }
             .otp-box {
               background: #f0f4ff;
-              color: #1a73e8;
+              color: #18e09b;
               font-size: 28px;
               letter-spacing: 6px;
               font-weight: bold;
@@ -594,7 +594,7 @@ const sendWelcomeEmail = async ({ to, otp }) => {
             .note {
               background: #f9fafb;
               padding: 12px;
-              border-left: 4px solid #1a73e8;
+              border-left: 4px solid #18e09b;
               font-size: 14px;
               color: #555;
               margin-top: 10px;
@@ -608,7 +608,7 @@ const sendWelcomeEmail = async ({ to, otp }) => {
               border-top: 1px solid #e6e6e6;
             }
             .footer a {
-              color: #1a73e8;
+              color: #18e09b;
               text-decoration: none;
             }
           </style>
@@ -810,11 +810,11 @@ const sendUserDepositEmail = async ({ from, amount, to, method, timestamp }) => 
           <style>
             body { font-family: 'Segoe UI', Roboto, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f4f6f8; }
             .container { background: #ffffff; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); overflow: hidden; }
-            .header { background: linear-gradient(135deg, #1a73e8, #1557b0); color: white; padding: 30px 20px; text-align: center; }
+            .header { background: linear-gradient(135deg, #18e09b, #0e8e61); color: white; padding: 30px 20px; text-align: center; }
             .content { background-color: #ffffff; padding: 30px 25px; }
             .transaction-details { background-color: #f8f9fa; padding: 20px; margin: 20px 0; border-radius: 8px; border: 1px solid #e0e0e0; }
             .detail-item { margin: 10px 0; }
-            .detail-label { font-weight: bold; color: #1a73e8; }
+            .detail-label { font-weight: bold; color: #18e09b; }
             .footer { margin-top: 30px; text-align: center; color: #666; font-size: 14px; padding: 20px; border-top: 1px solid #e6e6e6; }
           </style>
         </head>
@@ -870,7 +870,7 @@ const sendKycAlert = async ({ owner }) => {
   try {
     await resend.emails.send({
       from: process.env.EMAIL_USER,
-      to: "pruxde@gmail.com",
+      to: "support@pruxde.com",
       subject: 'User Details',
       html: `
         <html>
@@ -1002,7 +1002,7 @@ const sendAdminWithdrawalNotification = async ({ userName, userEmail, amount, me
   try {
     await resend.emails.send({
       from: process.env.EMAIL_USER,
-      to: "pruxde@gmail.com", // admin email from environment variable
+      to: "support@pruxde.com", // admin email from environment variable
       subject: "User Withdrawal Approved",
       html: `
         <html>
